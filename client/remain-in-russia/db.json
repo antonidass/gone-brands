@@ -1,0 +1,84 @@
+{
+  "companies": [
+    {
+      "id": "1",
+      "company": {
+        "id": "1",
+        "name": "IKEA",
+        "country": "Sweden",
+        "sector": "Saling",
+        "description": "This company sale chairs and sofa...",
+        "image_url": "url_image_ikea",
+        "site_url": "url_site_ikea"
+      },
+      "status": "GONE",
+      "date_left": "2022-04-23",
+      "date_back": "2022-04-30",
+      "news_url": "news_url_id_1"
+    },
+    {
+      "id": "2",
+      "company": {
+        "id": "2",
+        "name": "McDonalds",
+        "country": "USA",
+        "sector": "Food",
+        "description": "Hamburgers and good fast food...",
+        "image_url": "url_image_mcdonalds",
+        "site_url": "url_site_mcdonalds"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-20",
+      "date_back": "2022-06-01",
+      "news_url": "news_url_id_2"
+    },
+    {
+      "id": "3",
+      "company": {
+        "id": "3",
+        "name": "Apple",
+        "country": "USA",
+        "sector": "Technologies",
+        "description": "Apple is about technology and good  devices...",
+        "image_url": "url_image_apple",
+        "site_url": "url_site_apple"
+      },
+      "status": "TEMP_CLOSED",
+      "date_left": "2022-01-30",
+      "date_back": null,
+      "news_url": "news_url_id_3"
+    },
+    {
+      "id": "4",
+      "company": {
+        "id": "4",
+        "name": "Coca Cola",
+        "country": "USA",
+        "sector": "Food",
+        "description": "Coca cola its most important bottle in everybody's house...",
+        "image_url": "url_image_coca",
+        "site_url": "url_site_coca"
+      },
+      "status": "REMAIN",
+      "date_left": "2022-03-23",
+      "date_back": null,
+      "news_url": "news_url_id_4"
+    },
+    {
+      "id": "5",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "url_image_abb",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    }
+  ]
+}
