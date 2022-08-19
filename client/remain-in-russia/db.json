@@ -12,6 +12,7 @@
         "site_url": "url_site_ikea"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
       "date_left": "2022-04-23",
       "date_back": "2022-04-30",
       "news_url": "news_url_id_1"
@@ -28,6 +29,7 @@
         "site_url": "url_site_mcdonalds"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
       "date_left": "2022-05-20",
       "date_back": "2022-06-01",
       "news_url": "news_url_id_2"
@@ -39,11 +41,13 @@
         "name": "Apple",
         "country": "USA",
         "sector": "Technologies",
-        "description": "Apple is about technology and good  devices...",
+        "description": "Apple is about tech adsf adskfjadlsjf klajdsfklj alsdkfj dsjfkfads fads fkasd;fk als;dkf; asdl;f adksl;fl;aks dkasdk;aksdf ljsdklfjlsj ljanology and good  devices...",
         "image_url": "apple",
         "site_url": "url_site_apple"
       },
       "status": "TEMP_CLOSED",
+      "comment": "В связи с последними  fkdsklfjaksdjfkl adsklfkls jadlfjasdkjadjsfl jdlsjflk jsdlfjadlsfjkla adsfoadks fajsdf;k as;dfk;ldksf asd;fkl;adskf ksadl;fkdls;kfl;ksadl;fk ;dksf;dksflksdl;afkals;dkfks;df;sdfkals;kls;adkfl; ksd;flkdsl;fkls;adkfl;skadfl;k ls;dkls;df;aksfl;adssjdfkl jasdlfjalsdjlaksdjfkljsdkljaljsd fсобытиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-01-30",
       "date_back": null,
       "news_url": "news_url_id_3"
@@ -60,6 +64,8 @@
         "site_url": "url_site_coca"
       },
       "status": "REMAIN",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-03-23",
       "date_back": null,
       "news_url": "news_url_id_4"
@@ -76,6 +82,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -92,6 +100,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -108,6 +118,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -124,6 +136,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -140,6 +154,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -156,6 +172,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -172,6 +190,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -188,6 +208,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"
@@ -204,6 +226,8 @@
         "site_url": "url_site_abb"
       },
       "status": "GONE",
+      "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
+
       "date_left": "2022-05-01",
       "date_back": "2022-06-20",
       "news_url": "news_url_id_5"

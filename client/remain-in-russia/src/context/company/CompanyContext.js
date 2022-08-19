@@ -6,6 +6,7 @@ const CompanyContext = createContext();
 export function CompanyProvider({ children }) {
   const initialState = {
     companies: [],
+    company: {},
     loading: false,
   };
 

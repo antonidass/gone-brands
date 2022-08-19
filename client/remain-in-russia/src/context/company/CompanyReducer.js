@@ -6,6 +6,12 @@ const companyReducer = (state, action) => {
         companies: action.payload,
         loading: false,
       };
+    case "GET_COMPANY":
+      return {
+        ...state,
+        company: action.payload,
+        loading: false,
+      };
     case "SET_LOADING":
       return {
         ...state,
