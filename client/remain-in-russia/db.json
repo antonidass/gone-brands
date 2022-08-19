@@ -52,7 +52,7 @@
       "id": "4",
       "company": {
         "id": "4",
-        "name": "Coca Cola",
+        "name": "Coca-Cola",
         "country": "USA",
         "sector": "Food",
         "description": "Coca cola its most important bottle in everybody's house...",
@@ -66,6 +66,134 @@
     },
     {
       "id": "5",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "abb",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "6",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "abb",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "7",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "mcdonalds",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "8",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "abb",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "9",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "mcdonalds",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "10",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "abb",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "11",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "mcdonalds",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "12",
+      "company": {
+        "id": "1",
+        "name": "ABB",
+        "country": "Germany",
+        "sector": "Electrical",
+        "description": "We produce electrical things...",
+        "image_url": "mcdonalds",
+        "site_url": "url_site_abb"
+      },
+      "status": "GONE",
+      "date_left": "2022-05-01",
+      "date_back": "2022-06-20",
+      "news_url": "news_url_id_5"
+    },
+    {
+      "id": "13",
       "company": {
         "id": "1",
         "name": "ABB",
