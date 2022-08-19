@@ -9,13 +9,13 @@
         "sector": "Saling",
         "description": "This company sale chairs and sofa...",
         "image_url": "ikea",
-        "site_url": "url_site_ikea"
+        "site_url": "https://daisyui.com/components/radial-progress/"
       },
       "status": "GONE",
       "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
       "date_left": "2022-04-23",
       "date_back": "2022-04-30",
-      "news_url": "news_url_id_1"
+      "news_url": "https://daisyui.com/components/radial-progress/"
     },
     {
       "id": "2",
@@ -26,13 +26,13 @@
         "sector": "Food",
         "description": "Hamburgers and good fast food...",
         "image_url": "mcdonalds",
-        "site_url": "url_site_mcdonalds"
+        "site_url": "https://daisyui.com/components/radial-progress/"
       },
       "status": "GONE",
       "comment": "В связи с последними событиями мы приняли тяжелое решение - прекратить свою деятельность на территории РФ",
       "date_left": "2022-05-20",
       "date_back": "2022-06-01",
-      "news_url": "news_url_id_2"
+      "news_url": "https://daisyui.com/components/radial-progress/"
     },
     {
       "id": "3",

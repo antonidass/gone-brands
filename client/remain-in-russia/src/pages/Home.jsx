@@ -4,7 +4,7 @@ import CompanyList from "../components/companies/CompanyList";
 
 function Home(props) {
   return (
-    <div>
+    <div className="animate-fade-in-down">
       <CompanyList />
     </div>
   );

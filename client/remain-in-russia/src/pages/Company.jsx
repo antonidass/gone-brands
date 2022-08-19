@@ -34,7 +34,7 @@ function Company() {
   return (
     companyItem && (
       <>
-        <div className="w-full mx-auto lg:w-10/12 px-4">
+        <div className="w-full mx-auto lg:w-10/12 px-4 animate-fade-in-down">
           <div className="flex flex-row ">
             <div className="w-16 h-16 sm:w-60 sm:h-60  rounded-full shadow-lg shadow-neutral">
               <img
@@ -45,9 +45,9 @@ function Company() {
             </div>
 
             <div className="flex-1">
-              <h2 className="text-center font-bold text-lg sm:text-4xl link">
+              <h1 className="text-center font-bold text-lg sm:text-4xl">
                 {companyItem.name}
-              </h2>
+              </h1>
               <p className="text-center opacity-50">
                 {companyItem.description}
               </p>
@@ -59,9 +59,13 @@ function Company() {
             </div>
           </div>
           <div className="mt-4 sm:mt-10">
-            <h1 className="text-md sm:text-2xl font-bold link">
+            <a
+              href={news_url}
+              target="_blank"
+              className="text-md sm:text-2xl font-bold link"
+            >
               Оффициальный комментарий
-            </h1>
+            </a>
             <p className="opacity-70 mt-2 sm:mt-4">{comment}</p>
           </div>
 

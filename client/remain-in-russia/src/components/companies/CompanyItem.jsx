@@ -4,7 +4,7 @@ export default function CompanyItem({
   listItem: { id, company, status, date_left, date_back, new_url },
 }) {
   return (
-    <div className="card shadow-lg shadow-primary bg-base-200">
+    <div className="card shadow-lg shadow-neutral bg-base-200">
       <div
         className="flex flex-row items-center space-x-2 card-body px-4 h-28"
         key={id}
