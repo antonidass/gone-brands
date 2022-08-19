@@ -8,7 +8,7 @@
         "country": "Sweden",
         "sector": "Saling",
         "description": "This company sale chairs and sofa...",
-        "image_url": "url_image_ikea",
+        "image_url": "ikea",
         "site_url": "url_site_ikea"
       },
       "status": "GONE",
@@ -24,7 +24,7 @@
         "country": "USA",
         "sector": "Food",
         "description": "Hamburgers and good fast food...",
-        "image_url": "url_image_mcdonalds",
+        "image_url": "mcdonalds",
         "site_url": "url_site_mcdonalds"
       },
       "status": "GONE",
@@ -40,7 +40,7 @@
         "country": "USA",
         "sector": "Technologies",
         "description": "Apple is about technology and good  devices...",
-        "image_url": "url_image_apple",
+        "image_url": "apple",
         "site_url": "url_site_apple"
       },
       "status": "TEMP_CLOSED",
@@ -56,7 +56,7 @@
         "country": "USA",
         "sector": "Food",
         "description": "Coca cola its most important bottle in everybody's house...",
-        "image_url": "url_image_coca",
+        "image_url": "coca-cola",
         "site_url": "url_site_coca"
       },
       "status": "REMAIN",
@@ -72,7 +72,7 @@
         "country": "Germany",
         "sector": "Electrical",
         "description": "We produce electrical things...",
-        "image_url": "url_image_abb",
+        "image_url": "abb",
         "site_url": "url_site_abb"
       },
       "status": "GONE",

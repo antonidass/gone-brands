@@ -1,12 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
+import CompanyList from "../components/companies/CompanyList";
 
 function Home(props) {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <CompanyList />
+    </div>
+  );
 }
 
-Home.propTypes = {}
+Home.propTypes = {};
 
-export default Home
+export default Home;
