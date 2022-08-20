@@ -31,10 +31,10 @@ function Company() {
   const {
     id,
     status,
-    date_left,
+    dateLeft,
     comment,
     date_back,
-    news_url,
+    newsUrl,
     company: companyItem,
   } = company;
 
@@ -43,7 +43,7 @@ function Company() {
     month: "long",
     day: "numeric",
   };
-  const dateLeftLoc = new Date(date_left).toLocaleString("ru-RU", options);
+  const dateLeftLoc = new Date(dateLeft).toLocaleString("ru-RU", options);
 
   if (loading) {
     return <Spinner />;
@@ -64,7 +64,7 @@ function Company() {
           <div className="w-16 h-16 sm:w-60 sm:h-60  rounded-full shadow-lg shadow-neutral">
             <img
               className="mt-2 sm:mt-8"
-              src={`/assets/companies_logo/${companyItem.image_url}.svg`}
+              src={`/assets/companies_logo/${companyItem.imageUrl}.svg`}
               alt=""
             />
           </div>
@@ -82,15 +82,15 @@ function Company() {
               <p className="text-center opacity-30">{companyItem.sector}</p>
               <Flag
                 className="w-4 sm:w-8 opacity-30 ml-4"
-                code={companyItem.country_code}
-                title={companyItem.country_name}
+                code={companyItem.countryCode}
+                title={companyItem.countryName}
               />
             </div>
           </div>
         </div>
         <div className="mt-4 sm:mt-10">
           <a
-            href={news_url}
+            href={newsUrl}
             target="_blank"
             className="text-md sm:text-2xl font-bold link"
           >

@@ -1,15 +1,18 @@
 package com.example.remaininrussia.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "company")
+@Table
 @Data
 public class Company {
+    public Company () {}
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
@@ -19,8 +22,11 @@ public class Company {
     @NotNull
     private String name;
 
-    @Column(name = "country")
-    private String country;
+    @Column(name = "country_name")
+    private String countryName;
+
+    @Column(name = "country_code")
+    private String countryCode;
 
     @Column(name = "sector")
     private String sector;
@@ -35,5 +41,6 @@ public class Company {
     private String siteUrl;
 
     @OneToOne(mappedBy = "company")
+    @JsonIgnore
     private ListCompanies list;
 }
