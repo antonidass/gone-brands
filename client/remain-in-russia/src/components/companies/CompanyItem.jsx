@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function CompanyItem({
-  listItem: { id, company, status, date_left, date_back, new_url },
+  listItem: { id, company, status, date_left, date_back, news_url },
 }) {
   return (
     <div className="card shadow-lg shadow-neutral bg-base-200">
@@ -30,7 +30,9 @@ export default function CompanyItem({
           </h5>
         </Link>
         <div className="flex flex-col justify-between h-full w-2/12">
-          <a className="text-xs text-neutral">Источник</a>
+          <a href={news_url} target="_blank" className="text-xs text-neutral">
+            Источник
+          </a>
         </div>
       </div>
     </div>

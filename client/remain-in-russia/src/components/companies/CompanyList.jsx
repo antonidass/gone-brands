@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import CompanyContext from "../../context/company/CompanyContext";
 import { getCompanies } from "../../context/company/CompanyActions";
 import CompanyItem from "./CompanyItem";
+import Spinner from "../layout/Spinner";
 
 export default function CompanyList() {
   const { companies, loading, dispatch } = useContext(CompanyContext);
@@ -23,6 +24,6 @@ export default function CompanyList() {
       ))}
     </div>
   ) : (
-    <h1>Loading...</h1>
+    <Spinner />
   );
 }
