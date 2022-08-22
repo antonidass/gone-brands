@@ -1,3 +1,4 @@
+import { getCompanies } from "./CompanyActions";
 const companyReducer = (state, action) => {
   switch (action.type) {
     case "GET_COMPANIES":
@@ -22,7 +23,6 @@ const companyReducer = (state, action) => {
         ...state,
         loading: false,
       };
-
     default:
       return state;
   }
