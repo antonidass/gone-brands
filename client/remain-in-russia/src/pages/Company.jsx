@@ -94,7 +94,7 @@ function Company() {
             target="_blank"
             className="text-md sm:text-2xl font-bold link"
           >
-            Оффициальный комментарий
+            Официальный комментарий
           </a>
           <p className="opacity-70 mt-2 sm:mt-4">{comment}</p>
         </div>

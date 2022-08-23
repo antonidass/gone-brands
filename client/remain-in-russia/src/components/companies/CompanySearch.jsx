@@ -1,13 +1,15 @@
 import { searchCompanies } from "../../context/company/CompanyActions";
 import CompanyContext from "../../context/company/CompanyContext";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { getCompanies } from "../../context/company/CompanyActions";
 
 function CompanySearch(props) {
   const [text, setText] = useState("");
-  const { companies, dispatch } = useContext(CompanyContext);
+  const { dispatch, isCleared } = useContext(CompanyContext);
+  const inputRef = useRef();
 
   const handleChange = (e) => {
+    inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
     setText(e.target.value);
   };
 
@@ -15,8 +17,9 @@ function CompanySearch(props) {
     e.preventDefault();
 
     if (text === "") {
-      //   setAlert("Please enter something", "error");
+      inputRef.current.style.backgroundColor = "#F76E85";
     } else {
+      dispatch({ type: "FILL_COMPANIES" });
       dispatch({ type: "SET_LOADING" });
       const companies = await searchCompanies(text);
       dispatch({ type: "GET_COMPANIES", payload: companies });
@@ -25,6 +28,11 @@ function CompanySearch(props) {
   };
 
   const getCompaniesHandle = async () => {
+    if (isCleared) {
+      return;
+    }
+
+    dispatch({ type: "CLEAR_COMPANIES" });
     dispatch({ type: "SET_LOADING" });
     const companiesList = await getCompanies();
     dispatch({ type: "GET_COMPANIES", payload: companiesList });
@@ -40,6 +48,7 @@ function CompanySearch(props) {
           <div className="form-control">
             <div className="relative">
               <input
+                ref={inputRef}
                 type="text"
                 className="w-full pr-40 bg-gray-200 input input-lg text-black"
                 placeholder="Search"
@@ -50,19 +59,18 @@ function CompanySearch(props) {
                 type="submit"
                 className="absolute top-0 right-0 rounded-l-none w-36 btn btn-lg"
               >
-                Go
+                Поиск
               </button>
             </div>
           </div>
         </form>
       </div>
-      {companies.length > 0 && (
-        <div>
-          <button onClick={getCompaniesHandle} className="btn btn-ghost btn-lg">
-            Clear
-          </button>
-        </div>
-      )}
+
+      <div>
+        <button onClick={getCompaniesHandle} className="btn btn-ghost btn-lg">
+          Очистить
+        </button>
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { BsSignpostFill } from "react-icons/bs";
 function Navbar({ title }) {
   return (
     <nav className="navbar  mb-12 shadow-lg bg-neutral text-neutral-content">
-      <div className="container mx-auto">
+      <div className="container mx-auto sm:mx-6">
         <div className="flex-none px-2 mx-2">
           <Link to="/" className="text-lg font-bold align-middle">
             <BsSignpostFill className="inline pr-2 text-5xl" />
