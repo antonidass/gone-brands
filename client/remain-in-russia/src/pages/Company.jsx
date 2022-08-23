@@ -24,7 +24,6 @@ function Company() {
       }
 
       dispatch({ type: "SET_Y_POSITION", payload: y });
-
       setIsExist(true);
       dispatch({ type: "GET_COMPANY", payload: companyData });
     };

@@ -2,10 +2,11 @@ import { searchCompanies } from "../../context/company/CompanyActions";
 import CompanyContext from "../../context/company/CompanyContext";
 import { useState, useContext, useRef } from "react";
 import { getCompanies } from "../../context/company/CompanyActions";
+import { Link } from "react-router-dom";
 
 function CompanySearch(props) {
   const [text, setText] = useState("");
-  const { dispatch, isCleared } = useContext(CompanyContext);
+  const { dispatch, isCleared, categories } = useContext(CompanyContext);
   const inputRef = useRef();
 
   const handleChange = (e) => {
@@ -53,7 +54,7 @@ function CompanySearch(props) {
                 ref={inputRef}
                 type="text"
                 className="w-full pr-40 bg-gray-200 input input-lg text-black"
-                placeholder="Search"
+                placeholder="Поиск..."
                 value={text}
                 onChange={handleChange}
               />
@@ -63,6 +64,24 @@ function CompanySearch(props) {
               >
                 Поиск
               </button>
+              <div className="dropdown mt-2">
+                <label tabIndex="0" className="btn opacity-50">
+                  Сектор
+                </label>
+                <ul
+                  tabIndex="0"
+                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li key={"0"}>
+                    <a>Любой</a>
+                  </li>
+                  {categories.map((category) => (
+                    <li key={category.id}>
+                      <Link to="/">{category.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </form>

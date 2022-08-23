@@ -11,6 +11,12 @@ const github = axios.create({
   baseURL: COMPANIES_URL,
 });
 
+export const getCategories = async () => {
+  const response = await fetch(`${COMPANIES_URL}/categories`);
+  const data = await response.json();
+  return data;
+};
+
 export const getCompanies = async () => {
   const response = await fetch(`${COMPANIES_URL}/listCompanies`);
 

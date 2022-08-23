@@ -12,6 +12,11 @@ const companyReducer = (state, action) => {
         company: action.payload,
         loading: false,
       };
+    case "GET_CATEGORIES":
+      return {
+        ...state,
+        categories: action.payload,
+      };
     case "SET_LOADING":
       return {
         ...state,
