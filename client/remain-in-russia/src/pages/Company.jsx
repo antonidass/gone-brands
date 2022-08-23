@@ -4,11 +4,13 @@ import { Navigate, useParams, Link } from "react-router-dom";
 import { getCompany } from "../context/company/CompanyActions";
 import Spinner from "../components/layout/Spinner";
 import Flag from "react-world-flags";
+import { useScrollPosition } from "react-use-scroll-position";
 
 function Company() {
   const { company, loading, dispatch } = useContext(CompanyContext);
   const params = useParams();
   const [isExist, setIsExist] = useState(true);
+  const { y } = useScrollPosition();
 
   useEffect(() => {
     dispatch({ type: "SET_LOADING" });
@@ -20,6 +22,8 @@ function Company() {
         dispatch({ type: "RESET_LOADING" });
         return;
       }
+
+      dispatch({ type: "SET_Y_POSITION", payload: y });
 
       setIsExist(true);
       dispatch({ type: "GET_COMPANY", payload: companyData });
@@ -80,11 +84,15 @@ function Company() {
 
             <div className="flex flex-row justify-center">
               <p className="text-center opacity-30">{companyItem.sector}</p>
-              <Flag
-                className="w-4 sm:w-8 opacity-30 ml-4"
-                code={companyItem.countryCode}
-                title={companyItem.countryName}
-              />
+              <div
+                className="tooltip  tooltip-bottom"
+                data-tip={companyItem.countryName}
+              >
+                <Flag
+                  className="w-4 sm:w-8 opacity-30 ml-4"
+                  code={companyItem.countryCode}
+                />
+              </div>
             </div>
           </div>
         </div>

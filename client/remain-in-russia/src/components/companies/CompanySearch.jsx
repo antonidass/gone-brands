@@ -28,6 +28,8 @@ function CompanySearch(props) {
   };
 
   const getCompaniesHandle = async () => {
+    inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
+
     if (isCleared) {
       return;
     }

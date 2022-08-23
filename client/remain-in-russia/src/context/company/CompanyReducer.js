@@ -32,6 +32,11 @@ const companyReducer = (state, action) => {
         ...state,
         isCleared: false,
       };
+    case "SET_Y_POSITION":
+      return {
+        ...state,
+        positionY: action.payload,
+      };
     default:
       return state;
   }

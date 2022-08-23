@@ -11,6 +11,7 @@ export function CompanyProvider({ children }) {
     company: {},
     loading: false,
     isCleared: true,
+    positionY: 0,
   };
 
   const [state, dispatch] = useReducer(CompanyReducer, initialState);

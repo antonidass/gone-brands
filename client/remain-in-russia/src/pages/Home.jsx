@@ -1,9 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { useContext, useEffect } from "react";
 import CompanyList from "../components/companies/CompanyList";
 import CompanySearch from "../components/companies/CompanySearch";
+import CompanyContext from "../context/company/CompanyContext";
 
 function Home(props) {
+  const { positionY } = useContext(CompanyContext);
+
+  useEffect(() => {
+    window.scrollTo(0, positionY);
+  }, []);
+
   return (
     <div className="animate-fade-in-down">
       <CompanySearch />
@@ -11,7 +17,5 @@ function Home(props) {
     </div>
   );
 }
-
-Home.propTypes = {};
 
 export default Home;
