@@ -13,6 +13,7 @@ export function CompanyProvider({ children }) {
     loading: false,
     isCleared: true,
     positionY: 0,
+    selectedItemSearch: "0",
   };
 
   const [state, dispatch] = useReducer(CompanyReducer, initialState);

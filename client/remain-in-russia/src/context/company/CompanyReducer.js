@@ -42,6 +42,11 @@ const companyReducer = (state, action) => {
         ...state,
         positionY: action.payload,
       };
+    case "SET_SELECTED_ITEM":
+      return {
+        ...state,
+        selectedItemSearch: action.payload,
+      };
     default:
       return state;
   }

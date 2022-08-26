@@ -31,15 +31,7 @@ function Company() {
     getCompanyData();
   }, [dispatch, params.id]);
 
-  const {
-    id,
-    status,
-    dateLeft,
-    comment,
-    date_back,
-    newsUrl,
-    company: companyItem,
-  } = company;
+  const { dateLeft, comment, newsUrl, company: companyItem } = company;
 
   const options = {
     year: "numeric",

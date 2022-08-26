@@ -13,13 +13,14 @@ export default function App() {
       <Router>
         <div className="flex flex-col justify-between h-screen">
           <Navbar />
-          <main className="container flex-1 mx-auto sm:mx-10 px-3 pb-12 ">
+          <main className="flex-1 mx-auto sm:mx-10 px-3 pb-12 ">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/notfound" element={<NotFound />} />
               <Route path="/about" element={<About />} />
               <Route path="/*" element={<NotFound />} />
               <Route path="/company/:id" element={<Company />} />
+              <Route path="/category/:id" element={<Home />} />
             </Routes>
           </main>
           <Footer />

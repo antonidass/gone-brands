@@ -6,12 +6,20 @@ import { Link } from "react-router-dom";
 
 function CompanySearch(props) {
   const [text, setText] = useState("");
-  const { dispatch, isCleared, categories } = useContext(CompanyContext);
+  const { dispatch, isCleared, categories, selectedItemSearch } =
+    useContext(CompanyContext);
   const inputRef = useRef();
 
   const handleChange = (e) => {
     inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
     setText(e.target.value);
+  };
+
+  const changeActiveItemHandler = (e) => {
+    dispatch({
+      type: "SET_SELECTED_ITEM",
+      payload: e.target.getAttribute("id_data"),
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -64,7 +72,7 @@ function CompanySearch(props) {
               >
                 Поиск
               </button>
-              <div className="dropdown mt-2">
+              <div className="dropdown dropdown-hover mt-2">
                 <label tabIndex="0" className="btn opacity-50">
                   Сектор
                 </label>
@@ -72,12 +80,33 @@ function CompanySearch(props) {
                   tabIndex="0"
                   className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
-                  <li key={"0"}>
-                    <a>Любой</a>
+                  <li
+                    onClick={changeActiveItemHandler}
+                    className={
+                      selectedItemSearch === "0" ? `bg-primary` : undefined
+                    }
+                    key={"0"}
+                  >
+                    <Link to="/" id_data="0">
+                      Любой
+                    </Link>
                   </li>
                   {categories.map((category) => (
-                    <li key={category.id}>
-                      <Link to="/">{category.name}</Link>
+                    <li
+                      onClick={changeActiveItemHandler}
+                      key={category.id}
+                      className={
+                        selectedItemSearch === category.id.toString()
+                          ? `bg-primary`
+                          : undefined
+                      }
+                    >
+                      <Link
+                        id_data={category.id}
+                        to={`/category/${category.id}`}
+                      >
+                        {category.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
