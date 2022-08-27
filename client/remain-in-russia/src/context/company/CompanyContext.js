@@ -8,6 +8,7 @@ const CompanyContext = createContext();
 export function CompanyProvider({ children }) {
   const initialState = {
     companies: [],
+    filteredCompanies: [],
     categories: [],
     company: {},
     loading: false,

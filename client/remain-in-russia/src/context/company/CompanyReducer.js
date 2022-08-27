@@ -4,7 +4,13 @@ const companyReducer = (state, action) => {
       return {
         ...state,
         companies: action.payload,
+        filteredCompanies: action.payload,
         loading: false,
+      };
+    case "GET_FILTERED_COMPANIES":
+      return {
+        ...state,
+        filteredCompanies: action.payload,
       };
     case "GET_COMPANY":
       return {

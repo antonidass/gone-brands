@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import CompanyContext from "../context/company/CompanyContext";
-import { Navigate, useParams, Link } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { getCompany } from "../context/company/CompanyActions";
 import Spinner from "../components/layout/Spinner";
 import Flag from "react-world-flags";
 import { useScrollPosition } from "react-use-scroll-position";
 
-function Company() {
+function Company(props) {
   const { company, loading, dispatch } = useContext(CompanyContext);
   const params = useParams();
   const [isExist, setIsExist] = useState(true);
   const { y } = useScrollPosition();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch({ type: "SET_LOADING" });
@@ -99,9 +100,12 @@ function Company() {
         </div>
 
         <div className="mt-12">
-          <Link to="/" className="btn btn-neutral sm:btn-lg">
+          <div
+            onClick={() => navigate(-1)}
+            className="btn btn-neutral sm:btn-lg"
+          >
             Назад
-          </Link>
+          </div>
         </div>
       </div>
     </>

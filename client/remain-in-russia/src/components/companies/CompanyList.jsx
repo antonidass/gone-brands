@@ -4,11 +4,11 @@ import CompanyItem from "./CompanyItem";
 import Spinner from "../layout/Spinner";
 
 export default function CompanyList() {
-  const { companies, loading, dispatch } = useContext(CompanyContext);
+  const { filteredCompanies, loading, dispatch } = useContext(CompanyContext);
 
   return !loading ? (
     <div className="grid grid-cols-1 gap-2 sm:gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-      {companies.map((item) => (
+      {filteredCompanies.map((item) => (
         <CompanyItem key={item.id} listItem={item} />
       ))}
     </div>

@@ -1,52 +1,62 @@
-import { searchCompanies } from "../../context/company/CompanyActions";
 import CompanyContext from "../../context/company/CompanyContext";
 import { useState, useContext, useRef } from "react";
-import { getCompanies } from "../../context/company/CompanyActions";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import BadgeContext from "../../context/badge/BadgeContext";
+import Dropdown from "../layout/Dropdown";
+import BadgeList from "../layout/BadgeList";
+import { getKeyByValue } from "../../utils/CategoryData";
 
 function CompanySearch(props) {
+  const params = useParams();
   const [text, setText] = useState("");
-  const { dispatch, isCleared, categories, selectedItemSearch } =
-    useContext(CompanyContext);
+  const { dispatch, companies } = useContext(CompanyContext);
   const inputRef = useRef();
+
+  const { badgeDispatch } = useContext(BadgeContext);
 
   const handleChange = (e) => {
     inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
     setText(e.target.value);
   };
 
-  const changeActiveItemHandler = (e) => {
-    dispatch({
-      type: "SET_SELECTED_ITEM",
-      payload: e.target.getAttribute("id_data"),
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const findCompaniesHandler = async (e) => {
     e.preventDefault();
 
     if (text === "") {
       inputRef.current.style.backgroundColor = "#F76E85";
     } else {
+      const id = params.id ? params.id : "0";
+      console.log("id = ", id);
+
+      let filtered = [];
+      if (id === "0") {
+        filtered = await companies.filter(
+          (comp) =>
+            comp.company.name.toLowerCase().includes(text.toLowerCase()) ===
+            true
+        );
+      } else {
+        filtered = await companies.filter(
+          (comp) =>
+            getKeyByValue(comp.company.sector) === id &&
+            comp.company.name.toLowerCase().includes(text.toLowerCase()) ===
+              true
+        );
+      }
+
       dispatch({ type: "FILL_COMPANIES" });
-      dispatch({ type: "SET_LOADING" });
-      const companies = await searchCompanies(text);
-      dispatch({ type: "GET_COMPANIES", payload: companies });
+      dispatch({
+        type: "GET_FILTERED_COMPANIES",
+        payload: filtered,
+      });
+      badgeDispatch({
+        type: "SET_BADGE_FINDER",
+        text: text.length <= 10 ? text : text.slice(0, 10) + "...",
+        badgeType: "badge-info",
+        enabled: true,
+      });
       setText("");
     }
-  };
-
-  const getCompaniesHandle = async () => {
-    inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
-
-    if (isCleared) {
-      return;
-    }
-
-    dispatch({ type: "CLEAR_COMPANIES" });
-    dispatch({ type: "SET_LOADING" });
-    const companiesList = await getCompanies();
-    dispatch({ type: "GET_COMPANIES", payload: companiesList });
   };
 
   return (
@@ -55,7 +65,7 @@ function CompanySearch(props) {
       lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8"
     >
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={findCompaniesHandler}>
           <div className="form-control">
             <div className="relative">
               <input
@@ -72,54 +82,13 @@ function CompanySearch(props) {
               >
                 Поиск
               </button>
-              <div className="dropdown dropdown-hover mt-2">
-                <label tabIndex="0" className="btn opacity-50">
-                  Сектор
-                </label>
-                <ul
-                  tabIndex="0"
-                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li
-                    onClick={changeActiveItemHandler}
-                    className={
-                      selectedItemSearch === "0" ? `bg-primary` : undefined
-                    }
-                    key={"0"}
-                  >
-                    <Link to="/" id_data="0">
-                      Любой
-                    </Link>
-                  </li>
-                  {categories.map((category) => (
-                    <li
-                      onClick={changeActiveItemHandler}
-                      key={category.id}
-                      className={
-                        selectedItemSearch === category.id.toString()
-                          ? `bg-primary`
-                          : undefined
-                      }
-                    >
-                      <Link
-                        id_data={category.id}
-                        to={`/category/${category.id}`}
-                      >
-                        {category.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-row justify-between">
+                <Dropdown />
+                <BadgeList text={text} />
               </div>
             </div>
           </div>
         </form>
-      </div>
-
-      <div>
-        <button onClick={getCompaniesHandle} className="btn btn-ghost btn-lg">
-          Очистить
-        </button>
       </div>
     </div>
   );
