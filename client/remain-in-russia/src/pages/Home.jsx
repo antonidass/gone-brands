@@ -12,11 +12,13 @@ function Home(props) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const getCompanyData = async () => {
+    const getCompanyData = () => {
       const category = searchParams.get("category");
       const name = searchParams.get("name");
+      console.log("name category = ", name, category);
+      console.log("companeis  = ", companies);
 
-      const filteredCompanies = await companies.filter(
+      const filteredCompanies = companies.filter(
         (comp) =>
           (category !== null
             ? getKeyByValue(comp.company.sector) === category
@@ -25,7 +27,7 @@ function Home(props) {
             ? comp.company.name.toLowerCase().includes(name.toLowerCase())
             : true)
       );
-
+      console.log("filtered comps = ", filteredCompanies);
       dispatch({
         type: "GET_FILTERED_COMPANIES",
         payload: filteredCompanies,
@@ -63,7 +65,7 @@ function Home(props) {
       }
     };
     getCompanyData();
-  }, [searchParams]);
+  }, [searchParams, companies]);
 
   useEffect(() => {
     window.scrollTo(0, positionY);

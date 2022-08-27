@@ -21,14 +21,12 @@ function CompanySearch(props) {
       // make input red error color
       inputRef.current.style.backgroundColor = "#F76E85";
       // paint input form to standart color
-      const timer = setTimeout(
+      setTimeout(
         () => (inputRef.current.style.backgroundColor = "rgb(229, 231, 235)"),
         3000
       );
     } else {
       const category = searchParams.get("category");
-      if (category === null) {
-      }
 
       // redirect to base page with category condition
       navigate(
