@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import BadgeContext from "../../context/badge/BadgeContext";
 import CompanyContext from "../../context/company/CompanyContext";
-import { getKeyByValue } from "../../utils/CategoryData";
 import Badge from "./Badge";
 
-export default function BadgeList({ text }) {
+export default function BadgeList() {
+  let navigate = useNavigate();
+  const { dispatch } = useContext(CompanyContext);
+
   const {
     badgeFilterText,
     badgeFilterType,
@@ -18,37 +20,27 @@ export default function BadgeList({ text }) {
     badgeDispatch,
   } = useContext(BadgeContext);
 
-  const { dispatch, companies } = useContext(CompanyContext);
-  const params = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const clearFiltering = async (mode) => {
-    // inputRef.current.style.backgroundColor = "rgb(229, 231, 235)";
-    let filtered = [];
-    const id = params.id ? params.id : "0";
+  const clearFiltering = (mode) => {
+    const category = searchParams.get("category");
+    const name = searchParams.get("name");
 
     if (mode == "filter") {
-      filtered = await companies.filter(
-        (comp) =>
-          comp.company.name.toLowerCase().includes(text.toLowerCase()) === true
-      );
+      searchParams.delete("category");
+      setSearchParams(searchParams);
+      navigate(name === null ? `/` : `/?name=${name}`);
       badgeDispatch({ type: "DISABLE_FILTER" });
+      dispatch({
+        type: "SET_SELECTED_ITEM",
+        payload: "0",
+      });
     } else if (mode == "finder") {
-      if (id !== "0") {
-        filtered = await companies.filter(
-          (comp) => getKeyByValue(comp.company.sector) === id
-        );
-      } else {
-        filtered = [...companies];
-      }
+      searchParams.delete("name");
+      setSearchParams(searchParams);
+      navigate(category === null ? `/` : `/?category=${category}`);
       badgeDispatch({ type: "DISABLE_FINDER" });
     }
-
-    dispatch({ type: "FILL_COMPANIES" });
-    dispatch({
-      type: "GET_FILTERED_COMPANIES",
-      payload: filtered,
-    });
-    dispatch({ type: "CLEAR_COMPANIES" });
   };
 
   return (

@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import CompanyContext from "../../context/company/CompanyContext";
 
 export default function () {
   const { dispatch, categories, selectedItemSearch } =
     useContext(CompanyContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const name = searchParams.get("name");
 
   const changeActiveItemHandler = (e) => {
     dispatch({
@@ -41,7 +44,14 @@ export default function () {
                 : undefined
             }
           >
-            <Link id_data={category.id} to={`/category/${category.id}`}>
+            <Link
+              id_data={category.id}
+              to={
+                name !== null
+                  ? `/?name=${name}&category=${category.id}`
+                  : `/?category=${category.id}`
+              }
+            >
               {category.name}
             </Link>
           </li>
