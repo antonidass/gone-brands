@@ -8,7 +8,7 @@ export const categoryDict = {
   6: "Одежда",
   7: "Потребление",
   8: "Финансы",
-  9: "Развлечения и игры",
+  9: "Развлечения",
 };
 
 export function getKeyByValue(value) {

@@ -30,7 +30,7 @@ export default function () {
           className={selectedItemSearch === "0" ? `bg-primary` : undefined}
           key={"0"}
         >
-          <Link to="/" id_data="0">
+          <Link to={name !== null ? `/?name=${name}` : `/`} id_data="0">
             Любой
           </Link>
         </li>

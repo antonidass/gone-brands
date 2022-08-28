@@ -15,8 +15,6 @@ function Home(props) {
     const getCompanyData = () => {
       const category = searchParams.get("category");
       const name = searchParams.get("name");
-      console.log("name category = ", name, category);
-      console.log("companeis  = ", companies);
 
       const filteredCompanies = companies.filter(
         (comp) =>
@@ -27,7 +25,7 @@ function Home(props) {
             ? comp.company.name.toLowerCase().includes(name.toLowerCase())
             : true)
       );
-      console.log("filtered comps = ", filteredCompanies);
+
       dispatch({
         type: "GET_FILTERED_COMPANIES",
         payload: filteredCompanies,
@@ -37,29 +35,29 @@ function Home(props) {
         badgeDispatch({
           type: "SET_BADGE_FILTER",
           text: categoryDict[category],
-          badgeType: "badge-neutral",
+          badgeType: "badge-primary",
           enabled: true,
         });
       } else {
         badgeDispatch({
           type: "SET_BADGE_FILTER",
           text: "",
-          badgeType: "badge-neutral",
+          badgeType: "badge-primary",
           enabled: false,
         });
       }
       if (name) {
         badgeDispatch({
           type: "SET_BADGE_FINDER",
-          text: name.length > 10 ? name.slice(0, 10) : name,
-          badgeType: "badge-info",
+          text: name.length > 10 ? name.slice(0, 10) + "..." : name,
+          badgeType: "badge-secondary",
           enabled: true,
         });
       } else {
         badgeDispatch({
           type: "SET_BADGE_FINDER",
           text: "",
-          badgeType: "badge-info",
+          badgeType: "badge-secondary",
           enabled: false,
         });
       }

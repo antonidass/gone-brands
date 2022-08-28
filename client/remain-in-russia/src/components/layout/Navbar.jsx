@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { BsSignpostFill } from "react-icons/bs";
 import { useState } from "react";
+import Bye from "../layout/assets/bye.png";
 
 function Navbar({ title }) {
   const [dark, setDark] = useState(
@@ -29,11 +29,11 @@ function Navbar({ title }) {
   }
 
   return (
-    <nav className="navbar w-screen mb-12 shadow-lg bg-neutral text-neutral-content ml-0">
+    <nav className="navbar  w-screen mb-12 shadow-lg bg-neutral text-neutral-content ml-0">
       <div className="w-full mx-auto sm:mx-6">
         <div className="flex-none px-2 mx-2">
           <Link to="/" className="text-lg font-bold align-middle">
-            <BsSignpostFill className="inline pr-2 text-5xl" />
+            <img src={Bye} className="inline pr-2 w-12 h-12 sm:w-12 sm:h-12" />
             {title}
           </Link>
         </div>
